@@ -44,9 +44,9 @@ universidadeSelect.addEventListener("change", () => {
 
 // 🔹 Cascata Disciplina → Eixo Temático
 const opcoesEixo = {
-  "Matemática": ["Álgebra", "Geometria", "Funções"],
-  "Biologia": ["Genética", "Ecologia", "Citologia"],
-  // ➝ aqui você vai preencher os dados reais
+  "Matemática": ["Matemática Básica", "Conjuntos", "Funções", "Módulo", "Exponencial", "Logaritmo", "Geometria Plana", "Trigonometria", "Geometria Espacial", "Geometria Analítica", "Matrizes", "Determinantes", "Sistemas Lineares", "Sequências e Progressões", "Análise Combinatória", "Probabilidade", "Estatística", "Números Complexos", "Polinômios", "Mista"],
+  "Biologia": ["Introdução à Biologia", "Bioquímica", "Citologia", "Bioenergética", "Histologia", "Reprodução", "Embriologia", "Taxonomia", "Microbiologia", "Micologia", "Botânica", "Zoologia", "Fisiologia Humana", "Genética", "Biotecnologia", "Evolução", "Ecologia", "Mista"],
+  "Física": ["Introdução à Física", "Cinemática", "Dinâmica", "Estática", "Gravitação Universal", "Trabalho e Energia", "Quantidade de Movimento", "Movimento Circular", "Fluidos", "MHS", "Termologia", "Ondulatória", "Óptica", "Eletrostática", "Eletrodinâmica", "Magnetismo", "Física Moderna", "Análise Dimensional", "Mista"]
 };
 
 disciplinaSelect.addEventListener("change", () => {
