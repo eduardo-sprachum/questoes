@@ -100,64 +100,61 @@
     <h1>Banco de Questões</h1>
 
     <form id="questaoForm" onsubmit="salvarQuestao(event)">
-      <label>Universidade:</label>
-      <select id="universidade" required>
-        <option value="">Selecione</option>
-        <option>UEPG</option>
-        <option>UEM</option>
-        <option>UEL</option>
-        <option>UNIOESTE</option>
-        <option>UNICENTRO</option>
-        <option>UFPR</option>
-        <option>IFPR</option>
-        <option>ENEM</option>
-        <option>UNESPAR</option>
-        <option>UENP</option>
-      </select>
+<label>Universidade:</label>
+<select id="universidade" required>
+  <option value="">Selecione</option>
+  <option>UEPG</option>
+  <option>UEM</option>
+  <option>UEL</option>
+  <option>UNIOESTE</option>
+  <option>UNICENTRO</option>
+  <option>UFPR</option>
+  <option>IFPR</option>
+  <option>ENEM</option>
+  <option>UNESPAR</option>
+  <option>UENP</option>
+</select>
 
-      <label>Ano:</label>
-      <input type="number" id="ano" required>
+<label>Ano:</label>
+<input type="number" id="ano" required>
 
-      <label>Disciplina:</label>
-      <select id="disciplina" required>
-        <option value="">Selecione</option>
-        <option>Arte</option>
-        <option>Biologia</option>
-        <option>Educação Física</option>
-        <option>Física</option>
-        <option>Filosofia</option>
-        <option>Geografia</option>
-        <option>História</option>
-        <option>Português</option>
-        <option>Inglês</option>
-        <option>Espanhol</option>
-        <option>Francês</option>
-        <option>Química</option>
-        <option>Sociologia</option>
-        <option>Matemática</option>
-        <option>Literatura</option>
-      </select>
+<label>Disciplina:</label>
+<select id="disciplina" required>
+  <option value="">Selecione</option>
+  <option>Arte</option>
+  <option>Biologia</option>
+  <option>Educação Física</option>
+  <option>Física</option>
+  <option>Filosofia</option>
+  <option>Geografia</option>
+  <option>História</option>
+  <option>Português</option>
+  <option>Inglês</option>
+  <option>Espanhol</option>
+  <option>Francês</option>
+  <option>Química</option>
+  <option>Sociologia</option>
+  <option>Matemática</option>
+  <option>Literatura</option>
+</select>
 
-      <label>Eixo Temático:</label>
-      <input type="text" id="eixo" required>
+<label>Eixo Temático:</label>
+<select id="eixo" required>
+  <option value="">Selecione uma disciplina primeiro</option>
+</select>
 
-      <label>Assunto:</label>
-      <input type="text" id="assunto" required>
+<label>Assunto:</label>
+<select id="assunto" required>
+  <option value="">Selecione um eixo primeiro</option>
+</select>
 
-      <label>Enunciado:</label>
-      <textarea id="enunciado" required></textarea>
+<label>Enunciado:</label>
+<textarea id="enunciado" required></textarea>
 
-      <label>Alternativa A:</label>
-      <input type="text" id="altA" required>
-      <label>Alternativa B:</label>
-      <input type="text" id="altB" required>
-      <label>Alternativa C:</label>
-      <input type="text" id="altC" required>
-      <label>Alternativa D:</label>
-      <input type="text" id="altD" required>
-      <label>Alternativa E:</label>
-      <input type="text" id="altE" required>
-
+<!-- 🔹 Área dinâmica para alternativas ou somatório -->
+<div id="alternativasContainer">
+  <!-- Aqui o JS vai injetar os inputs corretos -->
+</div>
       <button type="submit">Adicionar Questão</button>
     </form>
   </div>
