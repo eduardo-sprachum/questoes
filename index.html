@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco de Questões</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDKs -->
+  <script type="module">
+    // 🔹 Importa os módulos do Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    // 🔹 CONFIGURAÇÃO DO FIREBASE (substitua com SUAS CHAVES!)
+    const firebaseConfig = {
+      apiKey: "SUA_API_KEY_AQUI",
+      authDomain: "SEU_PROJETO.firebaseapp.com",
+      projectId: "SEU_PROJECT_ID",
+      storageBucket: "SEU_PROJECT_ID.appspot.com",
+      messagingSenderId: "SEU_SENDER_ID",
+      appId: "SEU_APP_ID"
+    };
+
+    // Inicializa Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // 🔹 Códigos das disciplinas
+    const codigosDisciplina = {
+      "Arte": "ART",
+      "Biologia": "BIO",
+      "Educação Física": "EDF",
+      "Física": "FIS",
+      "Filosofia": "FIL",
+      "Geografia": "GEO",
+      "História": "HIS",
+      "Português": "POR",
+      "Inglês": "ING",
+      "Espanhol": "ESP",
+      "Francês": "FRA",
+      "Química": "QUI",
+      "Sociologia": "SOC",
+      "Matemática": "MAT",
+      "Literatura": "LIT"
+    };
+
+    // 🔹 Captura o formulário
+    const salvarQuestao = async (event) => {
+      event.preventDefault();
+
+      const universidade = document.getElementById("universidade").value;
+      const ano = document.getElementById("ano").value;
+      const disciplina = document.getElementById("disciplina").value;
+      const eixo = document.getElementById("eixo").value;
+      const assunto = document.getElementById("assunto").value;
+      const enunciado = document.getElementById("enunciado").value;
+      const altA = document.getElementById("altA").value;
+      const altB = document.getElementById("altB").value;
+      const altC = document.getElementById("altC").value;
+      const altD = document.getElementById("altD").value;
+      const altE = document.getElementById("altE").value;
+
+      try {
+        // Conta quantas questões da disciplina já existem
+        const q = query(collection(db, "questoes"), where("disciplina", "==", disciplina));
+        const snapshot = await getDocs(q);
+        const numero = snapshot.size + 1;
+
+        // Gera código
+        const disciplinaCodigo = codigosDisciplina[disciplina];
+        const numeroFormatado = String(numero).padStart(5, "0");
+        const codigoQuestao = disciplinaCodigo + numeroFormatado;
+
+        // Salva no Firestore
+        await addDoc(collection(db, "questoes"), {
+          codigo: codigoQuestao,
+          universidade,
+          ano,
+          disciplina,
+          eixo,
+          assunto,
+          enunciado,
+          alternativas: { A: altA, B: altB, C: altC, D: altD, E: altE },
+          criadoEm: new Date()
+        });
+
+        alert(`Questão cadastrada com sucesso! Código: ${codigoQuestao}`);
+        document.getElementById("questaoForm").reset();
+      } catch (error) {
+        console.error("Erro ao salvar questão: ", error);
+        alert("Erro ao salvar questão!");
+      }
+    };
+
+    window.salvarQuestao = salvarQuestao;
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Banco de Questões</h1>
+
+    <form id="questaoForm" onsubmit="salvarQuestao(event)">
+      <label>Universidade:</label>
+      <select id="universidade" required>
+        <option value="">Selecione</option>
+        <option>UEPG</option>
+        <option>UEM</option>
+        <option>UEL</option>
+        <option>UNIOESTE</option>
+        <option>UNICENTRO</option>
+        <option>UFPR</option>
+        <option>IFPR</option>
+        <option>ENEM</option>
+        <option>UNESPAR</option>
+        <option>UENP</option>
+      </select>
+
+      <label>Ano:</label>
+      <input type="number" id="ano" required>
+
+      <label>Disciplina:</label>
+      <select id="disciplina" required>
+        <option value="">Selecione</option>
+        <option>Arte</option>
+        <option>Biologia</option>
+        <option>Educação Física</option>
+        <option>Física</option>
+        <option>Filosofia</option>
+        <option>Geografia</option>
+        <option>História</option>
+        <option>Português</option>
+        <option>Inglês</option>
+        <option>Espanhol</option>
+        <option>Francês</option>
+        <option>Química</option>
+        <option>Sociologia</option>
+        <option>Matemática</option>
+        <option>Literatura</option>
+      </select>
+
+      <label>Eixo Temático:</label>
+      <input type="text" id="eixo" required>
+
+      <label>Assunto:</label>
+      <input type="text" id="assunto" required>
+
+      <label>Enunciado:</label>
+      <textarea id="enunciado" required></textarea>
+
+      <label>Alternativa A:</label>
+      <input type="text" id="altA" required>
+      <label>Alternativa B:</label>
+      <input type="text" id="altB" required>
+      <label>Alternativa C:</label>
+      <input type="text" id="altC" required>
+      <label>Alternativa D:</label>
+      <input type="text" id="altD" required>
+      <label>Alternativa E:</label>
+      <input type="text" id="altE" required>
+
+      <button type="submit">Adicionar Questão</button>
+    </form>
+  </div>
+</body>
+</html>
