@@ -142,10 +142,12 @@
 
     // Cascata Disciplina → Eixo
     const opcoesEixo = {
-  "Matemática": ["Matemática Básica", "Conjuntos", "Funções", "Módulo", "Exponencial", "Logaritmo", "Geometria Plana", "Trigonometria", "Geometria Espacial", "Geometria Analítica", "Matrizes", "Determinantes", "Sistemas Lineares", "Sequências e Progressões", "Análise Combinatória", "Probabilidade", "Estatística", "Números Complexos", "Polinômios", "Mista"],
-  "Biologia": ["Introdução à Biologia", "Bioquímica", "Citologia", "Bioenergética", "Histologia", "Reprodução", "Embriologia", "Taxonomia", "Microbiologia", "Micologia", "Botânica", "Zoologia", "Fisiologia Humana", "Genética", "Biotecnologia", "Evolução", "Ecologia", "Mista"],
-  "Física": ["Introdução à Física", "Cinemática", "Dinâmica", "Estática", "Gravitação Universal", "Trabalho e Energia", "Quantidade de Movimento", "Movimento Circular", "Fluidos", "MHS", "Termologia", "Ondulatória", "Óptica", "Eletrostática", "Eletrodinâmica", "Magnetismo", "Física Moderna", "Análise Dimensional", "Mista"],
-    };
+      "Matemática": ["Matemática Básica", "Conjuntos", "Funções", "Módulo", "Exponencial", "Logaritmo", "Geometria Plana", "Trigonometria", "Geometria Espacial", "Geometria Analítica", "Matrizes", "Determinantes", "Sistemas Lineares", "Sequências e Progressões", "Análise Combinatória", "Probabilidade", "Estatística", "Números Complexos", "Polinômios", "Mista"],
+      "Biologia": ["Introdução à Biologia", "Bioquímica", "Citologia", "Bioenergética", "Histologia", "Reprodução", "Embriologia", "Taxonomia", "Microbiologia", "Micologia", "Botânica", "Zoologia", "Fisiologia Humana", "Genética", "Biotecnologia", "Evolução", "Ecologia", "Mista"],
+      "Física": ["Introdução à Física", "Cinemática", "Dinâmica", "Estática", "Gravitação Universal", "Trabalho e Energia", "Quantidade de Movimento", "Movimento Circular", "Fluidos", "MHS", "Termologia", "Ondulatória", "Óptica", "Eletrostática", "Eletrodinâmica", "Magnetismo", "Física Moderna", "Análise Dimensional", "Mista"],
+      "Filosofia": ["Introdução à Filosofia", "Filosofia Antiga", "Filosofia Medieval", "Filosofia Moderna", "Filosofia Contemporânea", "Questões Filosóficas da Contemporaneidade", "Mista"],
+      "Química": ["Introdução à Química", "Estudo da Matéria", "Atomística", "Moléculas", "Funções Inorgânicas", "Reações Químicas", "Estequiometria", "Soluções", "Termoquímica", "Cinética Química", "Eletroquímica", "Hidrocarbonetos", "Funções Oxigenadas", "Funções Nitrogenadas", "Outras Funções Orgânicas", "Propriedades dos Compostos Orgânicos", "Reações Orgânicas", "Química Ambiental", "Mista"],
+   }
 
     disciplinaSelect.addEventListener("change", () => {
       const disciplina = disciplinaSelect.value;
