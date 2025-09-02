@@ -212,6 +212,16 @@
           "08": document.getElementById("alt08")?.value || "",
           "16": document.getElementById("alt16")?.value || ""
         };
+
+      if (universidade === "UNICENTRO" || universidade === "IFPR") {
+        alternativas = {
+          "A": document.getElementById("altA")?.value || "",
+          "B": document.getElementById("altB")?.value || "",
+          "C": document.getElementById("altC")?.value || "",
+          "D": document.getElementById("altD")?.value || ""
+        }
+      };
+
       } else {
         alternativas = {
           "A": document.getElementById("altA")?.value || "",
