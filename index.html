@@ -9,70 +9,70 @@
   <div class="container">
     <h1>Banco de Questões</h1>
 
-      <form id="questaoForm">
-        <!-- Universidade -->
-        <label for="universidade">Universidade:</label>
-        <select id="universidade" required>
-          <option value="">Selecione</option>
-          <option value="UEPG">UEPG</option>
-          <option value="UEM">UEM</option>
-          <option value="UEL">UEL</option>
-          <option value="UNIOESTE">UNIOESTE</option>
-          <option value="UNICENTRO">UNICENTRO</option>
-          <option value="UFPR">UFPR</option>
-          <option value="IFPR">IFPR</option>
-          <option value="ENEM">ENEM</option>
-          <option value="UNESPAR">UNESPAR</option>
-          <option value="UENP">UENP</option>
-        </select>
+    <form id="questaoForm">
+      <!-- Universidade -->
+      <label for="universidade">Universidade:</label>
+      <select id="universidade" required>
+        <option value="">Selecione</option>
+        <option value="UEPG">UEPG</option>
+        <option value="UEM">UEM</option>
+        <option value="UEL">UEL</option>
+        <option value="UNIOESTE">UNIOESTE</option>
+        <option value="UNICENTRO">UNICENTRO</option>
+        <option value="UFPR">UFPR</option>
+        <option value="IFPR">IFPR</option>
+        <option value="ENEM">ENEM</option>
+        <option value="UNESPAR">UNESPAR</option>
+        <option value="UENP">UENP</option>
+      </select>
 
-        <!-- Ano -->
-        <label for="ano">Ano:</label>
-        <input type="number" id="ano" placeholder="Ex: 2024" min="1900" max="2100" required>
+      <!-- Ano -->
+      <label for="ano">Ano:</label>
+      <input type="number" id="ano" placeholder="Ex: 2024" min="1900" max="2100" required>
 
-        <!-- Disciplina -->
-        <label for="disciplina">Disciplina:</label>
-        <select id="disciplina" required>
-          <option value="">Selecione</option>
-          <option value="Arte">Arte</option>
-          <option value="Biologia">Biologia</option>
-          <option value="Educação Física">Educação Física</option>
-          <option value="Física">Física</option>
-          <option value="Filosofia">Filosofia</option>
-          <option value="Geografia">Geografia</option>
-          <option value="História">História</option>
-          <option value="Português">Português</option>
-          <option value="Inglês">Inglês</option>
-          <option value="Espanhol">Espanhol</option>
-          <option value="Francês">Francês</option>
-          <option value="Química">Química</option>
-          <option value="Sociologia">Sociologia</option>
-          <option value="Matemática">Matemática</option>
-          <option value="Literatura">Literatura</option>
-        </select>
+      <!-- Disciplina -->
+      <label for="disciplina">Disciplina:</label>
+      <select id="disciplina" required>
+        <option value="">Selecione</option>
+        <option value="Arte">Arte</option>
+        <option value="Biologia">Biologia</option>
+        <option value="Educação Física">Educação Física</option>
+        <option value="Física">Física</option>
+        <option value="Filosofia">Filosofia</option>
+        <option value="Geografia">Geografia</option>
+        <option value="História">História</option>
+        <option value="Português">Português</option>
+        <option value="Inglês">Inglês</option>
+        <option value="Espanhol">Espanhol</option>
+        <option value="Francês">Francês</option>
+        <option value="Química">Química</option>
+        <option value="Sociologia">Sociologia</option>
+        <option value="Matemática">Matemática</option>
+        <option value="Literatura">Literatura</option>
+      </select>
 
-        <!-- Eixo temático (será cascata preenchido depois) -->
-        <label for="eixo">Eixo Temático:</label>
-        <select id="eixo" required>
-          <option value="">Selecione</option>
-        </select>
+      <!-- Eixo temático (será cascata preenchido depois) -->
+      <label for="eixo">Eixo Temático:</label>
+      <select id="eixo" required>
+        <option value="">Selecione</option>
+      </select>
 
-        <!-- Assunto (será cascata preenchido depois) -->
-        <label for="assunto">Assunto:</label>
-        <select id="assunto" required>
-          <option value="">Selecione</option>
-        </select>
+      <!-- Assunto (será cascata preenchido depois) -->
+      <label for="assunto">Assunto:</label>
+      <select id="assunto" required>
+        <option value="">Selecione</option>
+      </select>
 
-        <!-- Enunciado -->
-        <label for="enunciado">Enunciado:</label>
-        <textarea id="enunciado" required></textarea>
+      <!-- Enunciado -->
+      <label for="enunciado">Enunciado:</label>
+      <textarea id="enunciado" required></textarea>
 
-        <!-- Alternativas -->
-        <div id="alternativas-container"></div>
+      <!-- Alternativas -->
+      <div id="alternativas-container"></div>
 
-        <!-- Botão -->
-        <button type="submit">Salvar Questão</button>
-      </form>
+      <!-- Botão -->
+      <button type="submit">Salvar Questão</button>
+    </form>
   </div>
 
   <!-- JS -->
