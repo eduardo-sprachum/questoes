@@ -204,7 +204,9 @@
 
       // Coleta alternativas
       let alternativas = {};
+
       if (universidade === "UEPG" || universidade === "UEM") {
+        // Modelo somatório
         alternativas = {
           "01": document.getElementById("alt01")?.value || "",
           "02": document.getElementById("alt02")?.value || "",
@@ -213,16 +215,17 @@
           "16": document.getElementById("alt16")?.value || ""
         };
 
-      if (universidade === "UNICENTRO" || universidade === "IFPR") {
+      } else if (universidade === "UNICENTRO" || universidade === "IFPR") {
+        // Apenas A-D
         alternativas = {
           "A": document.getElementById("altA")?.value || "",
           "B": document.getElementById("altB")?.value || "",
           "C": document.getElementById("altC")?.value || "",
           "D": document.getElementById("altD")?.value || ""
-        }
-      };
+        };
 
       } else {
+        // Padrão A-E
         alternativas = {
           "A": document.getElementById("altA")?.value || "",
           "B": document.getElementById("altB")?.value || "",
